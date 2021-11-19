@@ -60,7 +60,10 @@ void	ft_putnbr2(unsigned int n)
 	}
 }
 
-void ft_puthex(size_t p)
+void ft_puthex(size_t *p)
 {
+	char *name;
 	
+	printf("%p", p);
+
 }

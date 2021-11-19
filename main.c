@@ -8,9 +8,13 @@ int	main(void)
 	a = 1;
 //	char ch = 0xc0;
 	b = &a;
+	size_t g = b;
 	//printf("\n Значение переменной a равно%d = %x шестн.", a, a);
-	printf("\n %d", 0x8000);	
-	// ft_printf("ft_printf: %d\n", );
+	printf("printf: %x\n", b);
+	printf("printf: %x\n", g % 16);
+	g /= 16;	
+	printf("printf: %x\n", g % 16);
+	ft_printf("ft_printf: %p", b);
 	return (0);
 }
 

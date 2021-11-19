@@ -13,7 +13,7 @@ static void get_type(char c, va_list el)
 	else if (c == 's' )
 		ft_putstr(va_arg(el, char *));
 	else if (c == 'p')
-	 	ft_puthex(va_arg(el, size_t));
+	 	ft_puthex(va_arg(el, size_t *));
 }
 
 int ft_num_p(const char *str, va_list el)

@@ -9,4 +9,5 @@ void	ft_putnbr(int n);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putnbr2(unsigned int n);
+void    ft_puthex(size_t *p);
 #endif
