@@ -1,35 +1,40 @@
 #include "ft_printf.h"
 
-void	ft_putnbr(int n)
+int	ft_putnbr(int number)
 {
-	long long	number;
 	char		res;
+	int			i;
 
-	number = n;
+	i = 0;
 	if (number < 0)
 	{
 		write (1, "-", 1);
 		number = number * (-1);
+		i++;
 	}
 	if (number <= 9)
 	{
 		res = number + '0';
 		write(1, &res, 1);
+		i++;
 	}
 	else
 	{
 		ft_putnbr((number / 10));
 		res = number % 10 + '0';
 		write(1, &res, 1);
+		i++;
 	}
+	return (i);
 }
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write (1, &c, 1);
+	return (1);
 }
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	if (s)
 	{
@@ -39,31 +44,29 @@ void	ft_putstr(char *s)
 			s++;
 		}
 	}
+	return (ft_strlen(s));
 }
 
-void	ft_putnbr2(unsigned int n)
+int	ft_putnbr2(unsigned int n)
 {
 	long long	number;
 	char		res;
+	int			i;
 
 	number = n;
+	i = 0;
 	if (number <= 9)
 	{
 		res = number + '0';
 		write(1, &res, 1);
+		i++;
 	}
 	else
 	{
 		ft_putnbr((number / 10));
 		res = number % 10 + '0';
 		write(1, &res, 1);
+		i++;
 	}
-}
-
-void ft_puthex(size_t *p)
-{
-	char *name;
-	
-	printf("%p", p);
-
+	return (i);
 }
