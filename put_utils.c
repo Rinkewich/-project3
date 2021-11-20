@@ -1,50 +1,52 @@
 #include "ft_printf.h"
 
-int	ft_putnbr(int number)
+int	ft_putnbr(int number, int i)
 {
 	char		res;
-	int			i;
+	int			n;
 
-	i = 0;
+	n = number;
 	if (number < 0)
 	{
-		write (1, "-", 1);
+		i += write (1, "-", 1);
 		number = number * (-1);
-		i++;
 	}
 	if (number <= 9)
 	{
 		res = number + '0';
-		write(1, &res, 1);
-		i++;
+		i += write(1, &res, 1);
 	}
 	else
-	{
-		ft_putnbr((number / 10));
+	{	
+		i += ft_putnbr(number / 10, i);
 		res = number % 10 + '0';
-		write(1, &res, 1);
-		i++;
+		if (n <= 0)
+			write(1, &res, 1);
+		else
+			i += write(1, &res, 1);
 	}
 	return (i);
 }
 
 int	ft_putchar(char c)
-{
-	write (1, &c, 1);
-	return (1);
+{	
+	return (write (1, &c, 1));
 }
 
 int	ft_putstr(char *s)
 {
-	if (s)
+	int	answer;
+
+	answer = 0;
+	if (!s)
+		return (ft_putstr("(null)"));
+	while (*s)
 	{
-		while (*s)
-		{
-			write (1, s, 1);
-			s++;
-		}
+		write (1, s, 1);
+		s++;
+		answer++;
 	}
-	return (ft_strlen(s));
+	return (answer);
 }
 
 int	ft_putnbr2(unsigned int n)
@@ -63,10 +65,32 @@ int	ft_putnbr2(unsigned int n)
 	}
 	else
 	{
-		ft_putnbr((number / 10));
+		ft_putnbr2((number / 10));
 		res = number % 10 + '0';
 		write(1, &res, 1);
 		i++;
 	}
 	return (i);
 }
+// int	ft_putnbr(int number, int i)
+// {
+// 	char		res;
+
+// 	if (number < 0)
+// 	{
+// 		i += write (1, "-", 1);
+// 		number = number * (-1);
+// 	}
+// 	if (number <= 9)
+// 	{
+// 		res = number + '0';
+// 		i += write(1, &res, 1);
+// 	}
+// 	else
+// 	{	
+// 		i += ft_putnbr(number / 10, i);
+// 		res = number % 10 + '0';
+// 		write(1, &res, 1);
+// 	}
+// 	return (i);
+// }

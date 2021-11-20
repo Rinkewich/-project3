@@ -1,13 +1,16 @@
-NAME	=	ft_printf.a.a
+NAME	=	libftprintf.a
 
-SRCS	=	ft_printf.c 	get_type.c\
+SRCS	=	ft_printf.c\
+			get_type.c\
+			ft_put_point.c\
+			ft_puthex_low.c\
+			ft_puthex_under.c\
+			put_utils.c
 
 
 HEADER	=	ft_printf.h
 
 OBJ	=	$(patsubst %.c, %.o, $(SRCS))
-OBJ_B	=	$(SRCS_B:%.c=%.o)
-
 CC	=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -I$(HEADER)
 
