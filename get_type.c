@@ -2,11 +2,8 @@
 
 static int	get_type(char c, va_list el)
 {
-	int	i;
-
-	i = 0;
 	if (c == 'd' || c == 'i')
-		return (ft_putnbr(va_arg(el, int), i));
+		return (ft_putnbr(va_arg(el, int)));
 	else if (c == 'c')
 		return (ft_putchar(va_arg(el, int)));
 	else if (c == 'u')

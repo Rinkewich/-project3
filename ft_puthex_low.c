@@ -22,8 +22,6 @@ int	ft_puthex_low(unsigned int n)
 	i = ft_len_point(n);
 	end = (char *)malloc(sizeof(char) * (i + 1));
 	end[i] = '\0';
-	// if (n == 0)
-	// 	ft_putchar('0');
 	while (i)
 	{
 		i--;

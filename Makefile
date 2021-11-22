@@ -5,14 +5,16 @@ SRCS	=	ft_printf.c\
 			ft_put_point.c\
 			ft_puthex_low.c\
 			ft_puthex_under.c\
-			put_utils.c
+			ft_put_c_s.c\
+			ft_putnbr.c\
+			ft_put_unsigned.c
 
 
 HEADER	=	ft_printf.h
 
 OBJ	=	$(patsubst %.c, %.o, $(SRCS))
 CC	=	gcc
-CFLAGS	=	-Wall -Wextra -Werror -I$(HEADER)
+CFLAGS	=	-Wall -Wextra -Werror
 
 .PHONY	:	all clean fclean re bonus
 

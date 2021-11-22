@@ -6,7 +6,7 @@
 # include <stdlib.h>
 int		ft_printf(const char *str, ...);
 int		ft_num_p(const char *str, va_list el);
-int		ft_putnbr(int number, int i);
+int		ft_putnbr(int number);
 int		ft_putchar(char c);
 int		ft_putstr(char *s);
 int		ft_putnbr2(unsigned int n);
