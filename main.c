@@ -4,9 +4,9 @@ int	main(void)
 {
 	int	a;
 
-	a = ft_printf("%d ", 55);
+	a = ft_printf("%d ", INT_MIN-1);
 	printf("%d\n", a);
-	a = printf("%d ", 55);
+	a = printf("%d ", INT_MIN-1) ;
 	printf("%d\n", a);
 	return (0);
 }
